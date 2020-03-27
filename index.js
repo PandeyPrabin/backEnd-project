@@ -45,7 +45,7 @@ app.use('/', index);
 app.use('/about', about);
 app.use('/contact', contact);
 app.use('/show', posts);
-app.use('/new', posts)
+app.use('/new', post)
 
 
 

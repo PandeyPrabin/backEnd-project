@@ -17,9 +17,9 @@ app.get('/show' , (req, res) => {
 });
 
 app.post('/post' , (req, res) => {
-    console.log(req.body.name)
+    console.log(req.body)
 const post = new Post({
-    name: req.body.name,
+    title: req.body.title,
     email: req.body.email
 
 })
