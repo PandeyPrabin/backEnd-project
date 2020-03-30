@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
-
+//templete engine
 const ejs = require ('ejs');
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public')); //this helps direcct all css and bootstrap files 
