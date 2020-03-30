@@ -3,7 +3,8 @@ const path = require ('path');
 const expressLayouts = require('express-ejs-layouts');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-
+var flash = require('connect-flash')
+var session = require('express-session')
 
 const app = new express();
 
@@ -22,6 +23,24 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
 app.use(bodyParser.json())
+
+//express session
+app.use(session({
+    secret: 'secret',
+    resave: true,
+    saveUninitialized: true
+  }))
+
+  //connect flash
+  app.use(flash())
+
+  //Global vars
+  app.use((req, res, next) => {
+    res.locals.success_msg = req.flash('success_msg')
+    res.locals.error_msg = req.flash('error_msg')
+    res.locals.error = req.flash('error')
+    next()
+});
 
 //templete engine
 const ejs = require ('ejs');
