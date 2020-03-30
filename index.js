@@ -31,17 +31,17 @@ app.use(express.static(__dirname + '/public')); //this helps direcct all css and
 app.use(expressLayouts);
 
 
-
+var users = require('./routes/users');
 var about = require('./routes/about');
 var contact = require('./routes/contact');
 var index = require('./routes/index');
-var post = require('./routes/post');
 var post = require('./routes/post');
 var posts = require('./routes/posts');
 
 
 
 app.use('/', index);
+app.use('/users', users);
 app.use('/about', about);
 app.use('/contact', contact);
 app.use('/show', posts);
