@@ -16,9 +16,10 @@ app.get('/' , (req, res) => {
         }
     })     //res.render('index')
 });
+app.get('/dashboard', function (req, res) {
+    console.log('dashboard')
+    res.render('dashboard')
+})
 
 module.exports = app;
-app.get('/', function (req, res) {
-    console.log('hello')
 
-});
