@@ -4,9 +4,9 @@ var Post = require('../models/post')
 
 
 
-// app.get('/' , (req, res) => {
-//     res.render('post')
-// });
+ app.get('/' , (req, res) => {
+    res.render('post')
+});
 
 app.get('/new' , (req, res) => {
     res.render('newpost')
