@@ -16,7 +16,7 @@ var Post = require('../models/post')
 //     res.redirect('/')
 // });
 
-app.get('/', function (req, res) {
+app.get('/show', function (req, res) {
         console.log('hello')
 
     Post.find({}, function(err, details){

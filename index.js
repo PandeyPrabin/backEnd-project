@@ -71,8 +71,8 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/about', about);
 app.use('/contact', contact);
-app.use('/show', posts);
-app.use('/new', post)
+app.use('/posts', posts);
+app.use('/post', post)
 
 
 

@@ -8,12 +8,8 @@ var Post = require('../models/post')
 //     res.render('post')
 // });
 
-app.get('/' , (req, res) => {
+app.get('/new' , (req, res) => {
     res.render('newpost')
-});
-app.get('/show' , (req, res) => {
-    console.log('hello')
-    res.redirect('/')
 });
 
 app.post('/post' , (req, res) => {
