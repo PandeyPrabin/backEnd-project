@@ -1,6 +1,7 @@
 var express = require ('express')
 var app = express()
 var Post = require('../models/post')
+var { ensureAuthenticated } = require('../config/auth')
 
 
 
@@ -16,9 +17,9 @@ app.get('/' , (req, res) => {
         }
     })     //res.render('index')
 });
-app.get('/dashboard', function (req, res) {
+app.get('/dashboard',ensureAuthenticated, function (req, res) {
     console.log('dashboard')
-    res.render('dashboard')
+    res.render('dashboard', {name: req.user.name})
 })
 
 module.exports = app;
