@@ -5,8 +5,12 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var flash = require('connect-flash')
 var session = require('express-session')
+var passport = require('passport')
 
 const app = new express();
+
+//Passport config
+require('./config/passport')(passport)
 
 var mongoDB = "mongodb+srv://Prabin:TurkuFinland@prabin-5muhx.mongodb.net/backEnd_project?retryWrites=true&w=majority";
 mongoose.connect(mongoDB, {
@@ -30,6 +34,10 @@ app.use(session({
     resave: true,
     saveUninitialized: true
   }))
+
+  //Passport Middlware
+app.use(passport.initialize());
+app.use(passport.session());
 
   //connect flash
   app.use(flash())

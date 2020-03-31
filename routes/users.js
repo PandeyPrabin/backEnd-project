@@ -2,6 +2,7 @@ var express = require ('express')
 var app = express()
 var User = require('../models/users')
 var bcrypt = require('bcryptjs')
+var passport = require('passport')
 
 //Login Page
 app.get('/login' , (req, res) => {
@@ -64,14 +65,19 @@ app.post('/register' , (req, res) => {
                                 res.redirect('/users/login')
                             })
                             .catch(err => console.log(err))
-
                        }))
-
                     }
                 })
-
         }
 });
-
+//Login handle
+app.post('/login', (req, res, next) => {
+    passport.authenticate('local', {
+        successRedirect: '/dashboard',
+        failureRedirect: 'users/login',
+        failureFlash: true
+      })(req, res, next);
+})
 
 module.exports = app;
+
