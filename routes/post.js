@@ -24,17 +24,7 @@ const post = new Post({
 console.log(post)
 post.save();
 res.redirect('/');
-//res.redirect('/');
-// post.save(function (err, post) {
-//     if (err)
-// req.flash('success_msg','New post is created')
-// res.redirect('/')// Go back to the project site
-// });
-//  post.save()
-//     .then(post => {
-//     //req.flash('success_msg','New post is created')
-//     res.redirect('/')
-// })
+
 });
 
 module.exports = app;
