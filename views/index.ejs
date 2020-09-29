@@ -17,6 +17,29 @@
 
   <!-- Main Content -->
   <div class="container">
+    <div class="clearfix">
+      <a class="btn btn-primary float-right" href="/post">Post Something New </a>
+    </div>
+    <br>
+    <div class="clearfix">
+      <a class="btn btn-primary float-right" href="/posts/show">Show Post </a>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-preview">
+          <% items.forEach(function(item, i){ %>
+        <h2 class="post-title">            
+          <%-item.title %>
+        </h2>
+        <h3 class="post-subtitle">
+        <%-item.email %>
+      </h3>
+
+    <% }) %>
+        </div>
+        </div>
+    </div>
+
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
         <div class="post-preview">
