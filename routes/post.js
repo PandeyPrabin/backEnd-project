@@ -10,9 +10,14 @@ var { ensureAuthenticated } = require('../config/auth')
     res.render('newpost')
 });
 
-// app.get('/new' , (req, res) => {
-//     res.render('newpost')
-// });
+app.get('/:id' , (req, res) => {
+        Post.findById(req.params.id, function(err, details){
+            // console.log(details)
+            // return;
+             res.render('post',{items: details});
+            
+        })
+});
 
 app.post('/post' , (req, res) => {
     //console.log(req.body)
@@ -32,6 +37,32 @@ post.save(function(err){
         res.redirect('/')
     }
 });
+});
+
+app.get('/edit/:id', (req, res) => {
+    Post.findById(req.params.id, function(err, post){
+        res.render('edit_post', {
+            post:post
+        })
+    })
+});
+app.post('/update/:id' , (req, res) => {
+    let post = {};
+    post.title = req.body.title
+    post.author = req.user._id
+    post.email = req.body.email
+    post.phonenumber = req.body.phonenumber
+    post.message = req.body.message
+
+    let query = {_id:req.params.id}
+
+    Post.update(query, post, function(err){
+        if(err){
+            console.log(err)
+        }else{
+            res.redirect('/')  
+        }
+    })
 });
 
 module.exports = app;
