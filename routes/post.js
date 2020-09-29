@@ -20,7 +20,6 @@ app.get('/:id' , (req, res) => {
 });
 
 app.post('/post' , (req, res) => {
-    //console.log(req.body)
 const post = new Post({
     title: req.body.title,
     author: req.user._id,
@@ -40,16 +39,18 @@ post.save(function(err){
 });
 
 app.get('/edit/:id', (req, res) => {
+    console.log("hello")
     Post.findById(req.params.id, function(err, post){
+        console.log(post)
         res.render('edit_post', {
             post:post
         })
     })
 });
-app.post('/update/:id' , (req, res) => {
+app.post('/edit/:id' , (req, res) => {
     let post = {};
     post.title = req.body.title
-    post.author = req.user._id
+    //post.author = req.user._id
     post.email = req.body.email
     post.phonenumber = req.body.phonenumber
     post.message = req.body.message
