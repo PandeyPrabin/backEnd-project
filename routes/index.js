@@ -18,7 +18,7 @@ app.get('/' , (req, res) => {
     })     //res.render('index')
 });
 app.get('/dashboard',ensureAuthenticated, function (req, res) {
-    console.log('dashboard')
+    //console.log('dashboard')
     res.render('dashboard', {name: req.user.name})
 })
 
