@@ -8,8 +8,13 @@ var Post = require('../models/post')
     res.render('post')
 });
 
+<<<<<<< Updated upstream
 app.get('/new' , (req, res) => {
     res.render('newpost')
+=======
+app.get('/' , (req, res) => {
+    res.render('post')
+>>>>>>> Stashed changes
 });
 
 app.post('/post' , (req, res) => {

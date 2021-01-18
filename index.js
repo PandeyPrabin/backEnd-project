@@ -71,7 +71,11 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/about', about);
 app.use('/contact', contact);
+<<<<<<< Updated upstream
 app.use('/posts', posts);
+=======
+app.use('/show', posts);
+>>>>>>> Stashed changes
 app.use('/post', post)
 
 
