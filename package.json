@@ -3,7 +3,7 @@
   "name": "startbootstrap-clean-blog",
   "version": "5.0.8",
   "scripts": {
-    "start": "index.js"
+    "start": "nodemon index.js"
   },
   "description": "Clean Blog is a Medium inspired blog theme for Bootstrap.",
   "keywords": [
@@ -30,15 +30,19 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "5.10.2",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "bootstrap": "4.3.1",
+    "connect-flash": "^0.1.1",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
     "express-ejs-layouts": "^2.5.0",
-    "express-handlebars": "^4.0.0",
-    "express-validator": "^6.4.0",
+    "express-session": "^1.17.0",
     "jquery": "3.4.1",
-    "mongoose": "^5.9.6"
+    "mongoose": "^5.9.6",
+    "nodemon": "^2.0.2",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {
     "browser-sync": "2.26.7",
