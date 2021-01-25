@@ -11,8 +11,14 @@ var UserSchema = new Schema ({
         required: true
     },
     userType: String,
-    email: String,
-    password: String,
+    email: {
+        type: String,
+        required: true
+    },
+    password: {
+        type: String,
+        required: true
+    },
     phoneNumber: Number,
     createdAt: Date,
     emailVerificationToken: String,
