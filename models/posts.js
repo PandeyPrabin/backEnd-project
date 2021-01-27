@@ -1,24 +1,26 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+var moment = require('moment');
 
 var PostSchema = ({
     title: String,
     authors:[{
-        type: Schema.objectId,
+        type: Schema.Types.ObjectId,
         ref: 'users'
     }],
     genres: [{
-        type: Schema.objectId,
+        type: Schema.Types.ObjectId,
         ref: 'genres'
     }],
-    createdAt: Date,
+    description: String,
+    date: { type: String, default: () => moment().format("DD.MM.YYYY")},
     comments: [{
         comment: String,
         commenter: {
-            type: objectId,
+            type: Schema.Types.ObjectId,
             ref: 'users'
         },
-        date: date
+        date: { type: String, default: () => moment().format("DD.MM.YYYY")},
     }],
 });
 

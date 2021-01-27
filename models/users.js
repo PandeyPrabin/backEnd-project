@@ -10,14 +10,7 @@ var UserSchema = new Schema ({
         type: String,
         required: true
     },
-  /*  userType: String,
-    email: String,
-    password: String,
-    phoneNumber: Number,
-    createdAt: Date,
-    emailVerificationToken: String,
-    passwordResetToken: String,
-    passwordResetExpires: Date */
+    userType: String,
     email: {
         type: String,
         required: true
@@ -25,7 +18,12 @@ var UserSchema = new Schema ({
     password: {
         type: String,
         required: true
-    }
+    },
+    phoneNumber: Number,
+    createdAt: Date,
+    emailVerificationToken: String,
+    passwordResetToken: String,
+    passwordResetExpires: Date
 });
 
 // Virtual for user full name
