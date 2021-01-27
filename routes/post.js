@@ -3,9 +3,10 @@ var app = express();
 var Posts = require('../models/posts');
 
 
-app.get('/', function (req, res) {
+app.get('/:id', function (req, res) {
 
-    Posts.find({},function(err, details){
+    Posts.findById(req.params.id)
+    .exec(function(err, details){
        
         if(err){
             console.log('Cannot fetch data from database!!!');
