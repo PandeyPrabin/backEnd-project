@@ -8,7 +8,7 @@ app.get('/' , (req, res) => {
 });
 
 
-app.post('/store' , (req, res) => {
+app.post('/' , (req, res) => {
     const post = new Posts({
         title: req.body.title,
         description: req.body.description,

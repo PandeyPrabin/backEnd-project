@@ -1,12 +1,14 @@
 var mongoose = require ('mongoose');
 var Schema = mongoose.Schema;
+var moment = require('moment');
+
 
 var UserSchema = new Schema ({
-    firstname: {
+    firstName: {
         type: String,
         required: true
     },
-    lastname: {
+    lastName: {
         type: String,
         required: true
     },
@@ -20,10 +22,10 @@ var UserSchema = new Schema ({
         required: true
     },
     phoneNumber: Number,
-    createdAt: Date,
+    createdAt: { type: String, default: () => moment().format("DD.MM.YYYY")},
     emailVerificationToken: String,
     passwordResetToken: String,
-    passwordResetExpires: Date
+    passwordResetExpires: Date,
 });
 
 // Virtual for user full name
