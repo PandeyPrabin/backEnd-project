@@ -36,15 +36,16 @@ var contact = require('./routes/contact');
 var createPost = require('./routes/createPost');
 var index = require('./routes/index');
 var post = require('./routes/post');
+var register = require('./routes/register');
 const { toUnicode } = require('punycode');
 
 
-
-app.use('/', index);
 app.use('/about', about);
 app.use('/contact', contact);
 app.use('/createPost', createPost);
+app.use('/', index);
 app.use('/post', post);
+app.use('/register', register)
 
 
 
