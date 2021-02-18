@@ -45,7 +45,9 @@ app.use('/contact', contact);
 app.use('/createPost', createPost);
 app.use('/', index);
 app.use('/post', post);
-app.use('/register', register)
+app.use('/register', register);
+app.use('/login', login);
+
 
 
 
