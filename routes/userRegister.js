@@ -7,7 +7,7 @@ var passport = require('passport')
 //Register Page
 
 app.get('/' , (req, res) => {
-    res.render('register')
+    res.render('userRegister')
 });
 
 
