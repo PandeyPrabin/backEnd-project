@@ -42,6 +42,7 @@ var createPost = require('./routes/createPost');
 var index = require('./routes/index');
 var login = require ('./routes/login');
 var post = require('./routes/post');
+var resetPassword = require('./routes/resetPassword');
 var userRegister = require('./routes/userRegister');
 const { toUnicode } = require('punycode');
 
@@ -52,7 +53,8 @@ app.use('/createPost', createPost);
 app.use('/', index);
 app.use('/login', login);
 app.use('/post', post);
-app.use('/UserRegister', userRegister)
+app.use('/resetPassword', resetPassword);
+app.use('/userRegister', userRegister)
 
 
 
