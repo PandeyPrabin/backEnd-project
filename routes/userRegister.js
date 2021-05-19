@@ -31,7 +31,7 @@ app.post('/' , (req, res) => {
             errors.push({msg:'Passwords should be atleast 6 characters'})
         }
         if(errors.length > 0){
-            res.render('register',{errors})
+            res.render('userRegister',{errors})
         }else{
             //validation passed
             User.findOne({email: email})
@@ -39,7 +39,7 @@ app.post('/' , (req, res) => {
                     if(user) {
                         //if user already exists
                         errors.push({msg:'Email is already registered'})
-                        res.render('register',{errors})
+                        res.render('userRegister',{errors})
                     }else{
                         var newUser = new User({
                             firstName,

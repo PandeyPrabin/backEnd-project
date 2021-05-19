@@ -284,6 +284,9 @@ header.masthead .post-heading .meta a {
 
 .post-preview > a > .post-subtitle {
   font-weight: 300;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   margin: 0 0 10px;
 }
 
